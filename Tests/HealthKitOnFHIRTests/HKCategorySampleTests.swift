@@ -136,7 +136,7 @@ class HKCategorySampleTests: XCTestCase {
     }
 
     func testSleepAnalysis() throws {
-        let values: [HKCategoryValueSleepAnalysis] = [.inBed, .asleepUnspecified, .awake, .asleepCore, .asleepDeep, .asleepREM]
+        let values: [HKCategoryValueSleepAnalysis] = [.inBed, .awake]
 
         for value in values {
             let observation = try createObservationFrom(
@@ -339,81 +339,81 @@ class HKCategorySampleTests: XCTestCase {
         )
     }
 
-    func testInfrequentMenstrualCycles() throws {
-        let observation = try createObservationFrom(
-            type: HKCategoryType(.infrequentMenstrualCycles),
-            value: HKCategoryValue.notApplicable.rawValue
-        )
+//    func testInfrequentMenstrualCycles() throws {
+//        let observation = try createObservationFrom(
+//            type: HKCategoryType(.infrequentMenstrualCycles),
+//            value: HKCategoryValue.notApplicable.rawValue
+//        )
+//
+//        XCTAssertEqual(
+//            observation.code.coding?.first,
+//            createCategoryCoding(
+//                categoryType: HKCategoryType(.infrequentMenstrualCycles).description,
+//                display: "Infrequent Menstrual Cycles"
+//            )
+//        )
+//        XCTAssertEqual(
+//            observation.value,
+//            .string("HKCategoryTypeIdentifierInfrequentMenstrualCycles".asFHIRStringPrimitive())
+//        )
+//    }
 
-        XCTAssertEqual(
-            observation.code.coding?.first,
-            createCategoryCoding(
-                categoryType: HKCategoryType(.infrequentMenstrualCycles).description,
-                display: "Infrequent Menstrual Cycles"
-            )
-        )
-        XCTAssertEqual(
-            observation.value,
-            .string("HKCategoryTypeIdentifierInfrequentMenstrualCycles".asFHIRStringPrimitive())
-        )
-    }
+//    func testIrregularMenstrualCycles() throws {
+//        let observation = try createObservationFrom(
+//            type: HKCategoryType(.irregularMenstrualCycles),
+//            value: HKCategoryValue.notApplicable.rawValue
+//        )
+//
+//        XCTAssertEqual(
+//            observation.code.coding?.first,
+//            createCategoryCoding(
+//                categoryType: HKCategoryType(.irregularMenstrualCycles).description,
+//                display: "Irregular Menstrual Cycles"
+//            )
+//        )
+//        XCTAssertEqual(
+//            observation.value,
+//            .string("HKCategoryTypeIdentifierIrregularMenstrualCycles".asFHIRStringPrimitive())
+//        )
+//    }
 
-    func testIrregularMenstrualCycles() throws {
-        let observation = try createObservationFrom(
-            type: HKCategoryType(.irregularMenstrualCycles),
-            value: HKCategoryValue.notApplicable.rawValue
-        )
+//    func testPersistentIntermenstrualBleeding() throws {
+//        let observation = try createObservationFrom(
+//            type: HKCategoryType(.persistentIntermenstrualBleeding),
+//            value: HKCategoryValue.notApplicable.rawValue
+//        )
+//
+//        XCTAssertEqual(
+//            observation.code.coding?.first,
+//            createCategoryCoding(
+//                categoryType: HKCategoryType(.persistentIntermenstrualBleeding).description,
+//                display: "Persistent Intermenstrual Bleeding"
+//            )
+//        )
+//        XCTAssertEqual(
+//            observation.value,
+//            .string("HKCategoryTypeIdentifierPersistentIntermenstrualBleeding".asFHIRStringPrimitive())
+//        )
+//    }
 
-        XCTAssertEqual(
-            observation.code.coding?.first,
-            createCategoryCoding(
-                categoryType: HKCategoryType(.irregularMenstrualCycles).description,
-                display: "Irregular Menstrual Cycles"
-            )
-        )
-        XCTAssertEqual(
-            observation.value,
-            .string("HKCategoryTypeIdentifierIrregularMenstrualCycles".asFHIRStringPrimitive())
-        )
-    }
-
-    func testPersistentIntermenstrualBleeding() throws {
-        let observation = try createObservationFrom(
-            type: HKCategoryType(.persistentIntermenstrualBleeding),
-            value: HKCategoryValue.notApplicable.rawValue
-        )
-
-        XCTAssertEqual(
-            observation.code.coding?.first,
-            createCategoryCoding(
-                categoryType: HKCategoryType(.persistentIntermenstrualBleeding).description,
-                display: "Persistent Intermenstrual Bleeding"
-            )
-        )
-        XCTAssertEqual(
-            observation.value,
-            .string("HKCategoryTypeIdentifierPersistentIntermenstrualBleeding".asFHIRStringPrimitive())
-        )
-    }
-
-    func testProlongedMenstrualPeriods() throws {
-        let observation = try createObservationFrom(
-            type: HKCategoryType(.prolongedMenstrualPeriods),
-            value: HKCategoryValue.notApplicable.rawValue
-        )
-
-        XCTAssertEqual(
-            observation.code.coding?.first,
-            createCategoryCoding(
-                categoryType: HKCategoryType(.prolongedMenstrualPeriods).description,
-                display: "Prolonged Menstrual Periods"
-            )
-        )
-        XCTAssertEqual(
-            observation.value,
-            .string("HKCategoryTypeIdentifierProlongedMenstrualPeriods".asFHIRStringPrimitive())
-        )
-    }
+//    func testProlongedMenstrualPeriods() throws {
+//        let observation = try createObservationFrom(
+//            type: HKCategoryType(.prolongedMenstrualPeriods),
+//            value: HKCategoryValue.notApplicable.rawValue
+//        )
+//
+//        XCTAssertEqual(
+//            observation.code.coding?.first,
+//            createCategoryCoding(
+//                categoryType: HKCategoryType(.prolongedMenstrualPeriods).description,
+//                display: "Prolonged Menstrual Periods"
+//            )
+//        )
+//        XCTAssertEqual(
+//            observation.value,
+//            .string("HKCategoryTypeIdentifierProlongedMenstrualPeriods".asFHIRStringPrimitive())
+//        )
+//    }
 
     func testLactation() throws {
         let observation = try createObservationFrom(

@@ -14,7 +14,7 @@ import PackageDescription
 let package = Package(
     name: "HealthKitOnFHIR",
     platforms: [
-        .iOS(.v16)
+        .iOS(.v15)
     ],
     products: [
         .library(name: "HealthKitOnFHIR", targets: ["HealthKitOnFHIR"])

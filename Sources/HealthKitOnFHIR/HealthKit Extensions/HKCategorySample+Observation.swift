@@ -20,7 +20,7 @@ extension HKCategorySample {
         guard let mapping = mappings.categorySampleMapping[self.categoryType] else {
             throw HealthKitOnFHIRError.notSupported
         }
-
+        
         let valueString: String?
         switch self.categoryType {
         case HKCategoryType(.appetiteChanges):
@@ -103,10 +103,6 @@ extension HKCategorySample {
             HKCategoryType(.handwashingEvent),
             HKCategoryType(.sexualActivity),
             HKCategoryType(.intermenstrualBleeding),
-            HKCategoryType(.infrequentMenstrualCycles),
-            HKCategoryType(.irregularMenstrualCycles),
-            HKCategoryType(.persistentIntermenstrualBleeding),
-            HKCategoryType(.prolongedMenstrualPeriods),
             HKCategoryType(.lactation):
             // Samples of these types do not carry any value,
             // nor associated metadata, so we use the category
@@ -126,4 +122,7 @@ extension HKCategorySample {
 
         observation.setValue(valueString)
     }
+    
+    func mapIOS16() {}
+    func mapIOS15() {}
 }
